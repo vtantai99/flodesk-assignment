@@ -1,0 +1,51 @@
+.radioGroupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.groupLabel {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.optionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  padding: var(--space-xs);
+  padding-left: 0;
+  transition: background-color 0.2s;
+}
+
+.option:hover {
+  background-color: var(--color-background-hover);
+  border-radius: var(--border-radius-sm);
+}
+
+.radio {
+  width: var(--space-md);
+  height: var(--space-md);
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.optionLabel {
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.option:hover .optionLabel {
+  color: var(--color-primary-dark);
+}
