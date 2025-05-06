@@ -24,6 +24,7 @@ export type AttributeByTag<T extends keyof JSX.IntrinsicElements> = JSX.Intrinsi
 
 export interface BaseNode<T extends keyof JSX.IntrinsicElements> {
   id: string;
+  name?: string;
   tag: T;
   styles?: React.CSSProperties;
   attributes?: AttributeByTag<T>;

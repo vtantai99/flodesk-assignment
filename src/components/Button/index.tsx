@@ -5,13 +5,19 @@ interface ButtonProps {
   disabled?: boolean;
   className?: string;
   onClick?: () => void;
+  "data-testid"?: string;
 }
 
 const Button = (props: ButtonProps) => {
-  const { label, disabled, className, onClick } = props;
+  const { label, disabled, className, onClick, "data-testid": testId } = props;
 
   return (
-    <button className={`${styles.button} ${className}`} onClick={onClick} disabled={disabled}>
+    <button
+      className={`${styles.button} ${className ?? ""}`}
+      onClick={onClick}
+      disabled={disabled}
+      data-testid={testId}
+    >
       {label}
     </button>
   );

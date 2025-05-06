@@ -43,7 +43,7 @@ const Builder = ({ rootElement, setRootElement }: BuilderProps) => {
   if (!rootElement) return <div>Oops! Something wrong...</div>;
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="builder-page">
       <motion.div
         className={styles.pageContent}
         initial={{ x: -30, opacity: 0 }}

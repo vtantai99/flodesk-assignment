@@ -40,6 +40,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         type="color"
         value={selectedElement.styles?.backgroundColor || "#e0f7fa"}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleStyleChange("backgroundColor", e.target.value)}
+        data-testid="background-color-input"
       />
       <InputField
         label="Page width"
@@ -48,6 +49,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleStyleChange("maxWidth", `${e.target.value}%`)}
         min="50"
         max="100"
+        data-testid="page-width-input"
       />
     </>
   );
@@ -59,6 +61,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         type="color"
         value={selectedElement.styles?.color || "#333"}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleStyleChange("color", e.target.value)}
+        data-testid="text-color-input"
       />
       <InputField
         label="Font size"
@@ -67,6 +70,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleStyleChange("fontSize", `${e.target.value}px`)}
         min={type === ElementType.PARAGRAPH ? "12" : "24"}
         max={type === ElementType.PARAGRAPH ? "24" : "48"}
+        data-testid="font-size-input"
       />
       <RadioGroupField
         label="Font weight"
@@ -94,6 +98,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         label="Content"
         value={selectedElement.content || ""}
         onChange={({ target: { value } }) => handleContentChange(value)}
+        data-testid="content-textarea"
       />
     </>
   );
@@ -106,6 +111,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         value={(selectedElement.attributes as { src?: string })?.src || ""}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleAttributeChange("src", e.target.value)}
         placeholder="Enter image URL"
+        data-testid="image-url-input"
       />
       <InputField
         label="Alt Text"
@@ -113,6 +119,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         value={(selectedElement.attributes as { alt?: string })?.alt || ""}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleAttributeChange("alt", e.target.value)}
         placeholder="Enter alt text"
+        data-testid="alt-text-input"
       />
     </>
   );
@@ -125,12 +132,14 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
         value={selectedElement.content || ""}
         onChange={({ target: { value } }) => handleContentChange(value)}
         placeholder="Enter button text"
+        data-testid="button-text-input"
       />
       <InputField
         label="Background Color"
         type="color"
         value={selectedElement.styles?.backgroundColor || "#3b82f6"}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleStyleChange("backgroundColor", e.target.value)}
+        data-testid="button-bg-color-input"
       />
     </>
   );
@@ -180,7 +189,7 @@ const PageSettings: React.FC<PageSettingsProps> = ({ selectedElement, updateElem
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="settings-modal">
       {!isMobile && <h3 className={styles.heading}>{capitalizeFirstLetter(type)} settings</h3>}
       <div className={styles.content}>{renderSettingsByType()}</div>
     </div>

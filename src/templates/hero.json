@@ -1,6 +1,7 @@
 {
   "id": "container-1",
-  "type": "PAGE",
+  "name": "Hero Template",
+  "type": "page",
   "tag": "div",
   "styles": {
     "height": "100%",
@@ -13,11 +14,15 @@
     "gap": "16px",
     "padding": "10%"
   },
+  "attributes": {
+    "data-testid": "page-element"
+  },
   "children": [
     {
       "id": "image-1",
-      "type": "IMAGE",
+      "type": "image",
       "tag": "img",
+      "data-testid": "image-element",
       "styles": {
         "display": "block",
         "margin": "0 auto 16px",
@@ -28,12 +33,13 @@
       },
       "attributes": {
         "src": "https://plus.unsplash.com/premium_photo-1714675739338-fd2d6b12bb70?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0NHx8fGVufDB8fHx8fA%3D%3D",
-        "alt": "Placeholder Image"
+        "alt": "Placeholder Image",
+        "data-testid": "image-element"
       }
     },
     {
       "id": "heading-1",
-      "type": "HEADING",
+      "type": "heading",
       "tag": "h1",
       "styles": {
         "fontSize": "32px",
@@ -42,12 +48,16 @@
         "textAlign": "center",
         "whiteSpace": "pre-line"
       },
+      "attributes": {
+        "data-testid": "heading-element"
+      },
       "content": "Discover the Power of Simplicity"
     },
     {
       "id": "paragraph-1",
-      "type": "PARAGRAPH",
+      "type": "paragraph",
       "tag": "p",
+      "data-testid": "paragraph-element",
       "styles": {
         "fontSize": "16px",
         "color": "#374151",
@@ -55,17 +65,23 @@
         "textAlign": "center",
         "whiteSpace": "pre-line"
       },
+      "attributes": {
+        "data-testid": "paragraph-element"
+      },
       "content": "We help you build fast, modern websites without the hassle. Our tools are designed to be intuitive, flexible, and perfect for creators of all levels."
     },
     {
       "id": "paragraph-2",
-      "type": "PARAGRAPH",
+      "type": "paragraph",
       "tag": "p",
       "styles": {
         "fontSize": "16px",
         "color": "#374151",
         "textAlign": "center",
         "whiteSpace": "pre-line"
+      },
+      "attributes": {
+        "data-testid": "paragraph-element"
       },
       "content": "Whether you're launching a new product or telling your brand's story, we give you everything you need to create something amazing — effortlessly."
     }

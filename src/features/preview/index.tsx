@@ -13,7 +13,7 @@ const Preview = ({ templates, setSelectedTemplate }: PreviewProps) => {
     <div className={styles.templateListContainer}>
       <div className={styles.templateListContent}>
         {templates.map((template) => (
-          <TemplateCard key={template.id} label="Simple Hero" onClick={() => setSelectedTemplate(template)}>
+          <TemplateCard key={template.id} label={template.name ?? ""} onClick={() => setSelectedTemplate(template)}>
             <PageContent rootNode={template} isPreview />
           </TemplateCard>
         ))}

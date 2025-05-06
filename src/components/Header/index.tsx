@@ -21,7 +21,13 @@ const Header = ({ title, onExport }: HeaderProps) => {
       <h1 className={styles.title} onClick={handleLogoClick}>
         {title}
       </h1>
-      {selectedTemplate && <Button label="Export" onClick={onExport} />}
+      {selectedTemplate && (
+        <Button 
+          data-testid="export-button"
+          label="Export" 
+          onClick={onExport} 
+        />
+      )}
     </header>
   );
 };

@@ -12,7 +12,7 @@ vi.mock("@/components/PageContent", () => ({
 
 vi.mock("@/components/TemplateCard", () => ({
   TemplateCard: ({ label, onClick, children }: { label: string; onClick: () => void; children: React.ReactNode }) => (
-    <div data-testid={`template-card-${label}`} onClick={onClick}>
+    <div data-testid="template-card" onClick={onClick}>
       <div>{label}</div>
       {children}
     </div>
@@ -46,15 +46,14 @@ describe("Preview component", () => {
       expect(screen.getByTestId(`page-content-${template.id}`)).toBeInTheDocument();
     });
 
-    expect(screen.getAllByTestId(/template-card-/)).toHaveLength(2);
+    expect(screen.getAllByTestId("template-card")).toHaveLength(2);
   });
 
   it("calls setSelectedTemplate when a card is clicked", () => {
     const setSelectedTemplate = vi.fn();
-
     render(<Preview templates={templates} setSelectedTemplate={setSelectedTemplate} />);
 
-    fireEvent.click(screen.getAllByTestId("template-card-Simple Hero")[0]);
+    fireEvent.click(screen.getAllByTestId("template-card")[0]);
     expect(setSelectedTemplate).toHaveBeenCalledWith(templates[0]);
   });
 });

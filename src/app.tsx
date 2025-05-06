@@ -6,8 +6,8 @@ import { ElementNode } from "@/types/dom";
 import { TemplateProvider, useTemplate } from "./context/TemplateContext";
 import { Preview } from "./features/preview";
 
-const template1 = heroTemplate as ElementNode;
-const template2 = simpleTemplate as ElementNode;
+const template1 = simpleTemplate as ElementNode;
+const template2 = heroTemplate as ElementNode;
 
 const AppContent = () => {
   const { selectedTemplate, setSelectedTemplate } = useTemplate();
