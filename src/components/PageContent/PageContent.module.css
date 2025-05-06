@@ -3,5 +3,5 @@
   transition: background 0.2s;
 }
 .editableElement:hover {
-  background: rgba(0, 0, 255, 0.1);
+  background-color: rgba(0, 0, 255, 0.1);
 }

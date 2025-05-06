@@ -1,7 +1,6 @@
-import { ROUTE_PATHS } from "@/constants/routes";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ElementNode } from "@/types/dom";
 import { createElement, CSSProperties, JSX, MouseEvent, ReactNode } from "react";
-import { useLocation } from "react-router";
 import pageContentStyles from "./PageContent.module.css";
 
 interface PageContentProps {
@@ -13,25 +12,20 @@ interface PageContentProps {
 
 const PageContent = (props: PageContentProps) => {
   const { rootNode, isPreview, onElementClick } = props;
-  const location = useLocation();
-  const isBuilderPage = location.pathname.startsWith(ROUTE_PATHS.BUILDER);
 
   const adjustedStyles = {
     ...rootNode.styles,
-    ...(isPreview ? { minHeight: "auto" } : {}),
   };
 
   const renderNode = (node: ElementNode): ReactNode => {
     const { tag, attributes, styles, content, children } = node;
-
-    // const isElementSelected = node.id === selectedElement?.id;
 
     const stylesWithActive: CSSProperties = {
       ...styles,
     };
 
     const handleClick = (e: MouseEvent) => {
-      if (isBuilderPage) {
+      if (!isPreview) {
         e.stopPropagation();
       }
       onElementClick?.(node);
@@ -47,13 +41,13 @@ const PageContent = (props: PageContentProps) => {
           style: stylesWithActive,
           ...attributes,
           onClick: handleClick,
-          className: pageContentStyles.editableElement,
+          className: !isPreview ? pageContentStyles.editableElement : "",
         },
         children.map(renderNode)
       );
     }
 
-    if (content) {
+    if (content !== undefined) {
       return createElement(
         Tag,
         {
@@ -61,9 +55,9 @@ const PageContent = (props: PageContentProps) => {
           style: stylesWithActive,
           ...attributes,
           onClick: handleClick,
-          className: pageContentStyles.editableElement,
+          className: !isPreview ? pageContentStyles.editableElement : "",
         },
-        content
+        content || "Click to edit"
       );
     }
 
@@ -72,7 +66,7 @@ const PageContent = (props: PageContentProps) => {
       style: stylesWithActive,
       ...attributes,
       onClick: handleClick,
-      className: pageContentStyles.editableElement,
+      className: !isPreview ? pageContentStyles.editableElement : "",
     });
   };
 

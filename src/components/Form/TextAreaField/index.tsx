@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./TextareaField.module.css";
 
 interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -6,7 +7,6 @@ interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaEl
 
 const TextareaField = (props: TextareaFieldProps) => {
   const { label, id, ...rest } = props;
-
   const textareaId = id || label.toLowerCase().replace(/\s+/g, "-");
 
   return (

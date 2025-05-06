@@ -10,16 +10,18 @@ export const generateFullHtmlPage = (bodyContent: string, options?: { title?: st
   <meta name="description" content="Generated static page" />
   <title>${title}</title>
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
   </style>
 </head>
 <body>
-${bodyContent}
+  ${bodyContent}
 </body>
 </html>`;
 };
