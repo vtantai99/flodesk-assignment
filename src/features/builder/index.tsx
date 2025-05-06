@@ -1,19 +1,19 @@
+import Modal from "@/components/Modal";
 import { PageContent } from "@/components/PageContent";
 import { PageSettings } from "@/components/PageSettings";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 import { ElementNode } from "@/types/dom";
+import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { motion } from "framer-motion";
 import { useCallback, useState } from "react";
-import styles from "./builderSection.module.css";
-import Modal from "@/components/Modal";
-import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
-import { useBreakpoint } from "@/hooks/useBreakpoint";
+import styles from "./builder.module.css";
 
-interface BuilderSectionProps {
+interface BuilderProps {
   rootElement: ElementNode;
   setRootElement: (template: ElementNode | null) => void;
 }
 
-const BuilderSection = ({ rootElement, setRootElement }: BuilderSectionProps) => {
+const Builder = ({ rootElement, setRootElement }: BuilderProps) => {
   const [selectedElement, setSelectedElement] = useState<ElementNode>(rootElement);
   const [isOpenSettingsPage, setIsOpenSettingsPage] = useState(true);
   const isMobileTablet = useBreakpoint(992);
@@ -76,4 +76,4 @@ const BuilderSection = ({ rootElement, setRootElement }: BuilderSectionProps) =>
   );
 };
 
-export { BuilderSection, type BuilderSectionProps };
+export { Builder, type BuilderProps };

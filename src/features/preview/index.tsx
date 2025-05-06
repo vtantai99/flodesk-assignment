@@ -1,19 +1,19 @@
+import { PageContent } from "@/components/PageContent";
+import { TemplateCard } from "@/components/TemplateCard";
 import { ElementNode } from "@/types/dom";
-import { PageContent } from "../PageContent";
-import { TemplateCard } from "../TemplateCard";
-import styles from "./previewSection.module.css";
+import styles from "./preview.module.css";
 
-type PreviewSectionProps = {
+type PreviewProps = {
   templates: ElementNode[];
   setSelectedTemplate: (template: ElementNode | null) => void;
 };
 
-const PreviewSection = ({ templates, setSelectedTemplate }: PreviewSectionProps) => {
+const Preview = ({ templates, setSelectedTemplate }: PreviewProps) => {
   return (
     <div className={styles.templateListContainer}>
       <div className={styles.templateListContent}>
         {templates.map((template) => (
-          <TemplateCard label="Simple Hero" onClick={() => setSelectedTemplate(template)}>
+          <TemplateCard key={template.id} label="Simple Hero" onClick={() => setSelectedTemplate(template)}>
             <PageContent rootNode={template} isPreview />
           </TemplateCard>
         ))}
@@ -22,4 +22,4 @@ const PreviewSection = ({ templates, setSelectedTemplate }: PreviewSectionProps)
   );
 };
 
-export { PreviewSection, type PreviewSectionProps };
+export { Preview, type PreviewProps };

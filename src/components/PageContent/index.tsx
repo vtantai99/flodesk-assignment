@@ -27,8 +27,8 @@ const PageContent = (props: PageContentProps) => {
     const handleClick = (e: MouseEvent) => {
       if (!isPreview) {
         e.stopPropagation();
+        onElementClick?.(node);
       }
-      onElementClick?.(node);
     };
 
     const Tag = tag as keyof JSX.IntrinsicElements;

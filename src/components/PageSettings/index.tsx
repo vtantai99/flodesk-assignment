@@ -5,7 +5,7 @@ import { ChangeEvent } from "react";
 import { InputField } from "../Form/InputField";
 import { RadioGroupField } from "../Form/RadioGroupField";
 import { TextareaField } from "../Form/TextAreaField";
-import styles from "./SettingsPanel.module.css";
+import styles from "./PageSettings.module.css";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 interface PageSettingsProps {

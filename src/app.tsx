@@ -1,10 +1,10 @@
-import { BuilderSection } from "@/components/BuilderSection";
+import { Builder } from "@/features/builder";
 import MainLayout from "@/layouts/MainLayout";
-import { PreviewSection } from "./components/PreviewSection";
-import { TemplateProvider, useTemplate } from "./context/TemplateContext";
-import simpleTemplate from "@/templates/simple.json";
 import heroTemplate from "@/templates/hero.json";
+import simpleTemplate from "@/templates/simple.json";
 import { ElementNode } from "@/types/dom";
+import { TemplateProvider, useTemplate } from "./context/TemplateContext";
+import { Preview } from "./features/preview";
 
 const template1 = heroTemplate as ElementNode;
 const template2 = simpleTemplate as ElementNode;
@@ -15,9 +15,9 @@ const AppContent = () => {
   return (
     <MainLayout>
       {selectedTemplate ? (
-        <BuilderSection rootElement={selectedTemplate} setRootElement={setSelectedTemplate} />
+        <Builder rootElement={selectedTemplate} setRootElement={setSelectedTemplate} />
       ) : (
-        <PreviewSection templates={[template1, template2]} setSelectedTemplate={setSelectedTemplate} />
+        <Preview templates={[template1, template2]} setSelectedTemplate={setSelectedTemplate} />
       )}
     </MainLayout>
   );
