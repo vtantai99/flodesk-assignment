@@ -1,4 +1,4 @@
-export const generateFullHtmlPage = (bodyContent: string, options?: { title?: string; lang?: string }) => {
+export const generateFullHtmlPage = (bodyContent: string, options?: { title?: string; lang?: string }): string => {
   const title = options?.title || "My Static Page";
   const lang = options?.lang || "en";
 
