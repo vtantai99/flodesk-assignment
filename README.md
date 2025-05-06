@@ -1,54 +1,36 @@
-# React + TypeScript + Vite
+# Assignment Summary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React + TypeScript + Vite** app, built with a simple setup for fast development and code quality.
 
-Currently, two official plugins are available:
+## Setup
+- Used **Vite** with `@vitejs/plugin-react` for quick updates (HMR).
+- Added **ESLint** with TypeScript rules and React plugins for clean code.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Running the App
+- Install dependencies: `npm install`
+- Start the development server: `npm run dev`
+- Open `http://localhost:5173` in your browser.
+- Build for production: `npm run build`
 
-## Expanding the ESLint configuration
+## Styling
+- Used **CSS Modules** to keep styles scoped and avoid conflicts.
+- Added **typed-css-modules** to auto-generate types for CSS, making styling easier with auto-suggestions.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Responsive Design
+- App works on **mobile**, **tablet**, and **desktop** with flexible layouts.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Animations
+- Used **Framer Motion** for simple animations (e.g., transitions). It’s not a CSS/UI framework, just a tool for smooth effects.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Code Quality & Testing
+- No `any` types; everything has clear TypeScript types.
+- **Unit tests** for components and utilities.
+- **Integration tests** for combined components inside `features` folder.
+- **E2E tests** with **Playwright** to check full user flows.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Pre-Commit Checks
+- **ESLint** and **conventional commits** enforced before commits.
+- Ready to add unit test checks for production.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Summary
+This project is a responsive, well-tested React app with type-safe code, modular styles, and simple animations. It’s built for scalability and maintainability.
