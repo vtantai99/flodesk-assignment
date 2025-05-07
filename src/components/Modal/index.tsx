@@ -27,6 +27,7 @@ const Modal = ({ isOpen, title, children, onClose }: ModalProps) => {
               animate="visible"
               exit="exit"
               transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
             >
               <h2 className={styles.header}>{title}</h2>
               <button className={styles.closeBtn} onClick={onClose}>
