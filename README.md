@@ -7,10 +7,10 @@ This project is a **React + TypeScript + Vite** app, built with a simple setup f
 - Added **ESLint** with TypeScript rules and React plugins for clean code.
 
 ## Running the App
-- Install dependencies: `npm install`
-- Start the development server: `npm run dev`
+- Install dependencies: `yarn`
+- Start the development server: `yarn dev`
 - Open `http://localhost:5173` in your browser.
-- Build for production: `npm run build`
+- Build for production: `yarn build`
 
 ## Styling
 - Used **CSS Modules** to keep styles scoped and avoid conflicts.
