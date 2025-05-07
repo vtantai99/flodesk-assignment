@@ -65,7 +65,7 @@
     },
     {
       "id": "banner-image",
-      "type": "IMAGE",
+      "type": "image",
       "tag": "img",
       "data-testid": "image-element",
       "styles": {
